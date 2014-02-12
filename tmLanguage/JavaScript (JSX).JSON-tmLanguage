@@ -61,7 +61,7 @@
 
 
     "regexp": {
-      "begin": "(?<=[=(:]|^|return|&&|\\|\\||!)\\s*(/)(?![/*+{}?])",
+      "begin": "(?<=[=(:]|^|return|&&|\\|\\||!)\\s*(/)(?![ /*+{}?])",
       "end": "(/)[igm]*",
       "name": "string.regexp.js",
       "endCaptures": {
