@@ -50,11 +50,29 @@
         }
       ]
     },
+    "string-quoted-template": {
+      "name": "string.quoted.template.js",
+      "begin": "`",
+      "end": "`",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.js" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.js" }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.js",
+          "match": "\\\\(x\\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)"
+        }
+      ]
+    },
     "string": {
       "name": "string.js",
       "patterns": [
         { "include": "#string-quoted-single" },
-        { "include": "#string-quoted-double" }
+        { "include": "#string-quoted-double" },
+        { "include": "#string-quoted-template" }
       ]
     },
 
