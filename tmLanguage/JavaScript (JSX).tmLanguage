@@ -69,6 +69,10 @@
           <key>include</key>
           <string>#expression</string>
         </dict>
+        <dict>
+          <key>include</key>
+          <string>#method-concise-es6</string>
+        </dict>
       </array>
     </dict>
     <key>block-braces-round</key>
@@ -621,6 +625,59 @@
         <dict>
           <key>include</key>
           <string>#meta-function-body</string>
+        </dict>
+      </array>
+    </dict>
+    <key>method-concise-es6</key>
+    <dict>
+      <key>begin</key>
+      <string>^\s+([a-zA-Z_$]\w*)(\()[^\)]*(\))\s\{$</string>
+      <key>beginCaptures</key>
+      <dict>
+        <key>0</key>
+        <dict>
+          <key>name</key>
+          <string>meta.function.js</string>
+        </dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>entity.name.function.js</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.parameters.begin.js</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.parameters.end.js</string>
+        </dict>
+      </dict>
+      <key>comment</key>
+      <string>attempt to match ES6 concise methods: myFunc(arg) { … }</string>
+      <key>end</key>
+      <string>\}</string>
+      <key>endCaptures</key>
+      <dict>
+        <key>0</key>
+        <dict>
+          <key>name</key>
+          <string>meta.brace.curly.js</string>
+        </dict>
+      </dict>
+      <key>name</key>
+      <string>meta.scope.function.js</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#comment</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#expression</string>
         </dict>
       </array>
     </dict>
